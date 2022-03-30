@@ -1,0 +1,64 @@
+<html lang="en">
+<head>
+    <title>Basket</title>
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 50%;
+        }
+
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+    </style>
+</head>
+
+<body>
+
+<!--<div>-->
+<!--<form action="/add" method="post">-->
+<!--    Name <input type="text" name="name"> <br>-->
+<!--    Price  <input type="number" name="price"> <br>-->
+<!--    Amount <input type="number" name="amount"> <br>-->
+<!--    <input type="submit">-->
+<!--</form>-->
+<!--</div>-->
+
+<div>
+    <a href="/basket">Your Basket</a> : {{ basketCount }}
+</div>
+
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Amount</th>
+        <th>Link</th>
+        <th>Add to basket</th>
+    </tr>
+    {% for product in products %}
+
+    <tr>
+        <td>{{ product.name }}</td>
+        <td>{{ product.price }}</td>
+        <td>{{ product.Amount }}</td>
+        <td><a href="/show/{{ product.iD }}">View</a></td>
+        <td><form action="/basket/{{ product.iD }}" method="post">
+            <button type="submit">Add to Basket</button>
+        </form></td>
+    </tr>
+    {% endfor %}
+
+</table>
+
+</body>
+</html>
+
+

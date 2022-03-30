@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+</head>
+<body>
+<a href="/" >Home</a>
+<br>
+<br>
+Basket :
+<br>
+{% for product in products %}
+{{ product.name }} <br>
+{% endfor %}
+</body>
+<br>
+<a href="/checkout" >Checkout</a>
+</html>

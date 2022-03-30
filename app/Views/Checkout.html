@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body>
+<a href="/" >Home</a>
+<br>
+Checkout:
+
+{% for product in products %}
+<div>
+    <div>
+        Name: {{ product.product.name}}
+    </div>
+    <div>
+        Price: {{ product.product.price }}
+    </div>
+    <div>
+        Amount: {{ product.amount }}
+    </div>
+    <div>
+        Total Sum: {{ product.total }}
+    </div>
+
+</div>
+
+<br>
+{% endfor %}
+<br>
+TotalPrice = {{ totalPrice }}
+<br>
+<form action="/checkout" method="post">
+    <button type="submit">Checkout</button>
+</form>
+
+</body>
+
+</html>
